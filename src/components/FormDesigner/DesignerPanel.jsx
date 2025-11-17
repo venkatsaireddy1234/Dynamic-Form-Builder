@@ -1,15 +1,28 @@
 import { Box, Button, Typography } from "@mui/material";
 import FieldEditor from "./FieldEditor";
+import ToastBar from "../../components/NavBar/ToastBar"; // adjust path if needed
+import { useState } from "react";
 
 export default function DesignerPanel({ schema, setSchema }) {
+  const [toastOpen, setToastOpen] = useState(false);
+  const [toastMessage, setToastMessage] = useState("");
+
   const addField = (field) => {
     setSchema([...schema, field]);
+    setToastMessage(`${field.label || "Field"} (${field.type || "type"}) added`);
+    setToastOpen(true);
   };
 
   const deleteField = (index) => {
+    const field = schema[index];
     const updated = schema.filter((_, i) => i !== index);
     setSchema(updated);
+
+    setToastMessage(`${field?.label || "Field"} (${field?.type || "type"}) deleted`);
+    setToastOpen(true);
   };
+
+  const handleCloseToast = () => setToastOpen(false);
 
   return (
     <Box
@@ -69,6 +82,9 @@ export default function DesignerPanel({ schema, setSchema }) {
       >
         Reset Schema
       </Button>
+
+      {/* Toast for add/delete action */}
+      <ToastBar open={toastOpen} message={toastMessage} onClose={handleCloseToast} />
     </Box>
   );
 }

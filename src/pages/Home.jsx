@@ -4,19 +4,37 @@ import JsonPreview from "../components/JsonPreview";
 import Renderer from "../components/FormRenderer/Renderer";
 import { useState } from "react";
 
-export default function Home() {
+const  Home = () => {
   const [schema, setSchema] = useState([]);
 
   return (
     <Box
-     style={{display: "flex", height: "100vh", width: "100vw", boxSizing: "border-box", margin: 20, gap:2}}
-
+      style={{
+        display: "flex",
+        height: "100vh",
+        width: "100vw",
+        boxSizing: "border-box",
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop:"50px"
+      }}
     >
+      <Box
+        style={{
+          display: "flex",
+          height: "80vh",
+          width: "80vw",
+          boxSizing: "border-box",
+          gap: 16,
+        }}
+      >
+
         <DesignerPanel schema={schema} setSchema={setSchema} />
-
         <JsonPreview schema={schema} />
-
         <Renderer schema={schema} />
+      </Box>
     </Box>
   );
 }
+
+export default Home;

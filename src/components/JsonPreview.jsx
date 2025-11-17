@@ -6,7 +6,7 @@ export default function JsonPreview({ schema }) {
        padding: 16,
         border: "1px solid #ccc",
         borderRadius: 4,
-        height: "100%",
+        height: "80%",
         overflow: "auto",
         width: "100%",
         
