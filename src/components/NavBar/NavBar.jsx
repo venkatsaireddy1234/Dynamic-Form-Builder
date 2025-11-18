@@ -10,12 +10,13 @@ const NavBar = () => {
         alignItems: "center",
         justifyContent: "space-between",
         height: "64px",
-        width: "95vw",
+        width: "80vw",
         padding: 10,
         margin: 20,
         borderRadius: 8,
         border: "1px solid #ccc",
         gap: 12,
+        marginLeft: 170
       }}
     >
       <Box>Home</Box>

@@ -16,7 +16,6 @@ const  Home = () => {
         boxSizing: "border-box",
         justifyContent: "center",
         alignItems: "center",
-        marginTop:"50px"
       }}
     >
       <Box

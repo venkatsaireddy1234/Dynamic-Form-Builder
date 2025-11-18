@@ -29,7 +29,7 @@ export default function DesignerPanel({ schema, setSchema }) {
       style={{
         border: "2px solid #ccc",
         borderRadius: 4,
-        height: "100%",
+        height: "80%",
         overflow: "auto",
         width: "100%",
         padding: 16,
